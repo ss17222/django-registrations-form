@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Update Reg Details</title>
+
+    <!-- CSS link ! -->
+    <link rel="stylesheet" href='{% static "CSS/update.css" %}'>
+
+    <!-- JS link ! -->
+    <script src="{% static 'JS/update.js' %}" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <div class="Topnav">
+      <h1>Fill out the Registration-Form!</h1>
+    </div>
+
+    <div class="Section">
+      <form class="Sector1" action="#" onsubmit="return validation_check()" method="POST">
+        {% csrf_token %}
+        <div class="Area">
+          <label for="">Firstname</label> <br>
+          <input type="text" id="firstname" name="Firstname" placeholder="Enter your firstname." value="{{data.Firstname}}" autocomplete="off" onchange=fname() onclick=fname() ondblclick=fname()>
+          <span id="fname_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Lastname</label> <br>
+          <input type="text" id="lastname" name="Lastname" placeholder="Enter your lastname." value="{{data.Lastname}}" autocomplete="off" onchange=lname() onclick=lname() ondblclick=lname()>
+          <span id="lname_error"></span>
+        </div>
+        <div class="Area">
+          <!-- <label for="">Email id</label> <br> -->
+          <input type="hidden" id="e_mail" name="Email" placeholder="Enter your email." value="{{data.Email}}" autocomplete="off" onchange=email() onclick=email() ondblclick=email()>
+          <!-- <span id="e_mail_error"></span> -->
+        </div>
+        <div class="Area">
+          <label for="">Date of Birth</label> <br>
+          <input type="date" id="dob" name="DOB" value="{{data.DOB}}" onclick=birthdate() ondblclick=birthday() max="2020-07-15">
+          <span id="dob_error"></span>
+        </div>
+        <div class="Area1">
+          <label>Gender</label> <br>
+          {% if data.Gender == 'male' %}
+          <input type="checkbox" id="m" name="Gender" value="male" checked onchange=m_gender()>
+          <!-- <input type="radio" id="m" name="Gender" value="male" checked onchange=m_gender()> -->
+          {% endif %}
+          <label>Male</label> <br>
+          {% if data.Gender == 'female' %}
+          <input type="checkbox" id="f" name="Gender" value="female" checked onchange=f_gender()>
+          <!-- <input type="radio" id="f" name="Gender" value="female" checked onchange=f_gender()> -->
+          {% endif %}
+          <label>Female</label>
+          <span id="gender_error"></span> <br>
+          {% if data.Gender == 'other' %}
+          <input type="checkbox" id="o" name="Gender" value="other" checked onchange=o_gender()>
+          <!-- <input type="radio" id="o" name="Gender" value="other" checked onchange=o_gender()> -->
+          {% endif %}
+          <label>Other</label>
+        </div>
+        <div class="Area">
+          <label for="">Hobby</label> <br>
+          <textarea name="Hobby" id="hoby" rows="8" cols="33" placeholder="Enter your hobbies here..." onchange=hobbies() onclick=hobbies() ondblclick=hobbies()>{{data.Hobby}}</textarea>
+          <span id="hobby_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Phone No.</label> <br>
+          <input type="number" id="phone" name="Phone" placeholder="Enter your phone." value="{{data.Phone}}" autocomplete="off" onchange=p_number() onclick=p_number() ondblclick=p_number()>
+          <span id="phone_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Password</label> <br>
+          <input type="text" id="pass" name="Password" placeholder="Enter your password." value="{{data.Password}}" autocomplete="off" onchange=pass_check() onclick=pass_check() ondblclick=pass_check()>
+          <span id="pass_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Confirm Password</label> <br>
+          <input type="text" id="cpass" name="CPassword" placeholder="Confirm Password." value="{{data.CPassword}}" autocomplete="off" onkeyup=cpass_check() onclick=cpass_check() ondblclick=cpass_check()>
+          <span id="cpass_error"></span>
+        </div>
+        <div class="Sub">
+          <input type="Submit" class="Sub1" name="Submit" value="SUBMIT">
+          <!-- <input type="reset" class="Sub2" name="Reset" value="RESET"> -->
+        </div>
+      </form>
+    </div>
+
+    <div class="Fttr">
+
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Detail</title>
+
+    <!-- CSS link ! -->
+    <link rel="stylesheet" href='{% static "CSS/logindetail.css" %}'>
+
+    <!-- JS link ! -->
+    <script src="{% static 'JS/logindetail.js' %}" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <div class="Topnav">
+      <h1>{{data.Firstname}} : your registered details. </h1>
+    </div>
+
+    <div class="Section1">
+      <table>
+        <tr>
+          <th>FIELDS</th>
+          <th>VALUES</th>
+        </tr>
+        <tr>
+          <td>FIRSTNAME</td>
+          <td>{{data.Firstname}}</td>
+        </tr>
+        <tr>
+          <td>LASTNAME</td>
+          <td>{{data.Lastname}}</td>
+        </tr>
+        <tr>
+          <td>EMAIL</td>
+          <td>{{data.Email}}</td>
+        </tr>
+        <tr>
+          <td>DATE OF BIRTH</td>
+          <td>{{data.DOB}}</td>
+        </tr>
+        <tr>
+          <td>GENDER</td>
+          <td>{{data.Gender}}</td>
+        </tr>
+        <tr>
+          <td>HOBBIES</td>
+          <td>{{data.Hobby}}</td>
+        </tr>
+        <tr>
+          <td>PHONE NO.</td>
+          <td>{{data.Phone}}</td>
+        </tr>
+        <tr>
+          <td>PASSWORD</td>
+          <td>{{data.Password}}</td>
+        </tr>
+        <tr>
+          <td>CONFIRM PASSWORD</td>
+          <td>{{data.CPassword}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="Section2">
+      <a href="{% url 'update' data.id %}">Edit Profile</a>
+    </div>
+
+    <div class="Fttr">
+    </div>
+
+  </body>
+</html>

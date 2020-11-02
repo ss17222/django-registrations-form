@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+}
+
+.Topnav{
+  width: 100%;
+  height: 80px;
+  background-color: brown;
+}
+
+.Topnav h1{
+  margin: 0;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.Section{
+  width:100%;
+  height: 427px;
+  padding-top: 120px;
+}
+
+.Sector{
+  width: 400px;
+  height: 300px;
+  border: 2px solid black;
+  margin-left: 480px;
+}
+
+.Sector h1{
+  color: red;
+  font-family: calibri;
+  margin-left: 133px;
+  padding-top: 70px;
+}
+
+.Sector a{
+  color: white;
+  font-size: 20px;
+  font-family: calibri;
+  background-color:  #007bff;
+  padding: 15px 55px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: 115px;
+  margin-top: 30px;
+}
+
+.Sector a:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

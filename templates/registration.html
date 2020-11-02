@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Registration Form</title>
+
+    <!-- CSS link ! -->
+    <link rel="stylesheet" href='{% static "CSS/REG.css" %}'>
+
+    <!-- JS link ! -->
+    <script src="{% static 'JS/registration.js' %}" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="Topnav">
+      <h1>Registration Form</h1>
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+
+    <div class="Section">
+      <form class="Sector1" action="#" onsubmit="return validation_check()" method="POST">
+        {% csrf_token %}
+        <div class="Area">
+          <label for="">First Name</label> <br>
+          <input type="text" id="firstname" name="First Name" placeholder="Your First Name." autocomplete="off" onchange=fname()><br>
+          <span id="fname_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Last Name</label> <br>
+          <input type="text" id="lastname" name="Lastname" placeholder="Your Last Name." autocomplete="off" onchange=lname()><br>
+          <span id="lname_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Email id</label> <br>
+          <input type="email" id="e_mail" name="Email" placeholder="Your Email." autocomplete="off" onchange=email()><br>
+          <span id="e_mail_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Date of Birth</label> <br>
+        <input type="date" id="dob" name="DOB" onclick=birthdate() ondblclick=birthday() max="2020-07-15"><br>
+          <span id="dob_error"></span>
+        </div>
+        <div class="Area1">
+          <label>Gender</label> <br>
+        
+          <input type="radio" id="m" name="Gender" value="male" onchange=m_gender()>
+          <label>Male</label> <br>
+         
+          <input type="radio" id="f" name="Gender" value="female" onchange=f_gender()>
+          <label>Female</label>
+          <span id="gender_error"></span> <br>
+         
+          <input type="radio" id="o" name="Gender" value="other" onchange=o_gender()>
+          <label>Other</label>
+        </div>
+        <div class="Area">
+          <label for="">Hobby</label> <br>
+          <input type="text" name="Hobby" id="hobby"  placeholder="Your Hobbies Here" onchange=hobbies()><br>
+          <span id="hobby_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Phone No.</label> <br>
+          <input type="number" id="phone" name="Phone" placeholder="Your Phone." autocomplete="off" onchange=p_number()><br>
+          <span id="phone_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Password</label> <br>
+          <input type="text" id="pass" name="Password" placeholder="Your Password." autocomplete="off" onchange=pass_check()><br>
+          <span id="pass_error"></span>
+        </div>
+        <div class="Area">
+          <label for="">Confirm Password</label> <br>
+          <input type="text" id="cpass" name="CPassword" placeholder="Confirm Password." autocomplete="off" disabled=true onkeyup=cpass_check()><br>
+          <span id="cpass_error"></span>
+        </div>
+        <div class="Sub">
+          <input type="Submit" class="Sub1" name="Submit" value="SUBMIT">
+          <input type="reset" class="Sub2" name="Reset" value="RESET">
+        </div>
+      </form>
+    </div>
+
+   
+
+
+  </body>
+</html>
